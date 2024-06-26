@@ -1,21 +1,7 @@
-# from io import TextIOWrapper
-# import csv
 import sys
 import xlsxwriter
 from xlsxwriter.utility import xl_rowcol_to_cell
 from fetch_decklist_from_link import fetch_decklist_from_url
-
-
-# def decklist_file_to_dict(deck: TextIOWrapper):
-#     deck_arr = deck.read().split("\n")
-#     return {
-#         cardname: int(qty)
-#         for qty, cardname in (
-#             card.split(" ", 1)
-#             for card in deck_arr
-#             if len(card) > 0 and card[0].isnumeric()
-#         )
-#     }
 
 
 def write_to_xlsx(
@@ -27,11 +13,6 @@ def write_to_xlsx(
 ):
     workbook = xlsxwriter.Workbook(output_filename)
     worksheet = workbook.add_worksheet()
-    format_green = workbook.add_format({"bg_color": "#ccffcc", "font_color": "#006600"})
-    format_green_border_bold = workbook.add_format(
-        {"bg_color": "#ccffcc", "font_color": "#006600", "bold": True, "border": 1}
-    )
-    format_red = workbook.add_format({"bg_color": "#ffcccc", "font_color": "#cc0000"})
     format_red_border_bold = workbook.add_format(
         {"bg_color": "#ffcccc", "font_color": "#cc0000", "bold": True, "border": 1}
     )
@@ -69,16 +50,11 @@ def write_to_xlsx(
     worksheet.write_row(end_row + 1, 0, ["Total Difference", "", *num_outliers])
 
     worksheet.autofit()
-    worksheet.freeze_panes(1, 0)
-    a1 = xl_rowcol_to_cell(start_row, 0)
-    a99 = xl_rowcol_to_cell(end_row, 0)
+    worksheet.freeze_panes(1, 1)
     b1 = xl_rowcol_to_cell(start_row, 1)
     c1 = xl_rowcol_to_cell(start_row, 2)
     z99 = xl_rowcol_to_cell(end_row, len(headers) - 1)
-    cell_range = f"{a1}:{z99}"
     c_cell_range = f"{c1}:{z99}"
-    cell_range_excluding_b = f"${a1}:${a99},${b1}:${z99}"
-    # format_range = (start_row, 0, end_row, len(headers))
 
     worksheet.conditional_format(
         c_cell_range,
@@ -96,22 +72,6 @@ def write_to_xlsx(
             "criteria": f"=AND(${b1}=1, {c1}>0, ISNUMBER({c1}))",
         },
     )
-    # worksheet.conditional_format(
-    #     cell_range,
-    #     {
-    #         "type": "formula",
-    #         "format": format_green,
-    #         "criteria": f"=(${b1}={len(deck_names) - 1})",
-    #     },
-    # )
-    # worksheet.conditional_format(
-    #     cell_range,
-    #     {
-    #         "type": "formula",
-    #         "format": format_red,
-    #         "criteria": f"=(${b1}=1)",
-    #     },
-    # )
 
     workbook.close()
 
@@ -143,7 +103,5 @@ if __name__ == "__main__":
         dd, dn = fetch_decklist_from_url(url)
         deck_dicts.append(dd)
         deck_names.append(dn)
-    # for dn in deck_names:
-    #     with open(dn, "r") as f:
-    #         deck_dicts.append(decklist_file_to_dict(f))
+
     run(deck_names, deck_dicts, output_filename)
