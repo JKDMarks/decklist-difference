@@ -1,0 +1,25 @@
+python .\decklist_difference.py rog_thras.xlsx https://www.moxfield.com/decks/MVlK-S7B0EOfYZd6GVh6UA https://www.moxfield.com/decks/XzmaS61pP0Sf8dufKdu1Ig https://www.moxfield.com/decks/gPsdTcGKukGlN_IUTWIMcg
+
+python .\decklist_difference.py shorikai.xlsx https://www.moxfield.com/decks/QFA9QvIqBE6S9_UrDCgWmQ https://www.moxfield.com/decks/4BL0F78g5U23hSn-UFLWPA https://www.moxfield.com/decks/15vk8uXW6Eqd_s0zfwwrzw https://www.moxfield.com/decks/mi0CZLVBx0C8NQMNcltxqQ
+
+1 Ancestral Hot Dog Minotaur
+1 Eldrazi Guacamole Tightrope
+1 Misunderstood Trapeze Elf
+1 Narrow-Minded Baloney Fireworks
+1 Phyrexian Midway Bamboozle
+1 Playable Delusionary Hydra
+1 Trained Blessed Mind
+1 Unassuming Gelatinous Serpent
+1 Unglued Pea-Brained Dinosaur
+1 Unsanctioned Ancient Juggler
+
+
+python decklist_difference.py rogthras_top4s.xlsx https://www.moxfield.com/decks/Qm9M5syzXUW4i3dWcUdL6A https://www.moxfield.com/decks/H7EaESfFp0ydDkCvOzkq-Q https://www.moxfield.com/decks/_B78aU2g3UGIayn0oKNhXg https://www.moxfield.com/decks/ZyzQtXXyD02jVMwFOLP6Qg https://www.moxfield.com/decks/FncvXfb5Bk2IANC0GoW9lA https://www.moxfield.com/decks/gPsdTcGKukGlN_IUTWIMcg 
+
+python decklist_difference.py 2024-07_kt_top4s.xlsx https://www.moxfield.com/decks/tulfrabEh0e0AP_x2KfhgA https://www.moxfield.com/decks/QkL0NKHlzUmQdXzZqnDJpQ https://www.moxfield.com/decks/LE4jCuVK10WAnAXiWq4lGg https://www.moxfield.com/decks/Jj4DbZWzB0Wvi4P0EI8Tvw https://www.moxfield.com/decks/lEUf2YA5f0iIk27nSK7UEg https://www.moxfield.com/decks/AZjuC4AqyE-3VDxTYG0kyg https://www.moxfield.com/decks/NM-etUouDke2iaICVb9_gg https://www.moxfield.com/decks/PbIpkYYkEUacELCDewf1vQ https://www.moxfield.com/decks/lgHG0ZxdbEyuOrSzut_V0A https://www.moxfield.com/decks/ut7r1PSZVUKMmaslK7_KOw https://www.moxfield.com/decks/ay_jz9L7XEe0zmcbAwZ2Ug https://www.moxfield.com/decks/XtOruYVVu0CDmDzqaKTtkA https://www.moxfield.com/decks/QQL1H44mNE6GjIgqWRgGeA
+
+python decklist_difference.py kt_without_consult.xlsx https://www.moxfield.com/decks/tulfrabEh0e0AP_x2KfhgA https://www.moxfield.com/decks/Jj4DbZWzB0Wvi4P0EI8Tvw https://www.moxfield.com/decks/7O1sCuIti0igU6Us_Jhadg https://www.moxfield.com/decks/JzNKIcG81k6zWB0JQAstwQ 
+
+python .\decklist_difference.py kt_top1_winners.xlsx https://www.moxfield.com/decks/tulfrabEh0e0AP_x2KfhgA https://www.moxfield.com/decks/QkL0NKHlzUmQdXzZqnDJpQ https://www.moxfield.com/decks/Jj4DbZWzB0Wvi4P0EI8Tvw https://www.moxfield.com/decks/AZjuC4AqyE-3VDxTYG0kyg https://www.moxfield.com/decks/lgHG0ZxdbEyuOrSzut_V0A https://www.moxfield.com/decks/lRQd3XGEB0K0CKCp4gT0rg https://www.moxfield.com/decks/0qIZRrmbIk2YhYuUgvzV7A https://www.moxfield.com/decks/IUpszOypXEqCzQ4r8ByIIg https://www.moxfield.com/decks/7O1sCuIti0igU6Us_Jhadg https://www.moxfield.com/decks/DY-b2OPSCE-JUmFxesFNaA https://www.moxfield.com/decks/dJG9cAGwyky-PNk1ElvTbQ https://www.moxfield.com/decks/fc9Q7wbYdkqCpU6MhN6uaQ https://www.moxfield.com/decks/GyNoY-URUEWszIUigIOTug https://www.moxfield.com/decks/ndXoAJzKp0eXEDfVDfyT4g https://www.moxfield.com/decks/eIAJ8Bg2d0igF7-Q9bqDPg https://www.moxfield.com/decks/LHE_l01eckaNlvv1lJhh7g https://www.moxfield.com/decks/kLjA3fk0f0uxQZQJ_A1Fdg https://www.moxfield.com/decks/pTP9pgkWEUSxUdYzn_BFQg https://www.moxfield.com/decks/JzNKIcG81k6zWB0JQAstwQ https://www.moxfield.com/decks/fc9Q7wbYdkqCpU6MhN6uaQ https://www.moxfield.com/decks/PAXrfgpn1UWvxMsIhVsiLA https://www.moxfield.com/decks/oU5xTBGuDEidmSUz6YVCDA https://www.moxfield.com/decks/4x6M8CfDBkmULUtNXQn0OQ https://www.moxfield.com/decks/LHE_l01eckaNlvv1lJhh7g https://www.moxfield.com/decks/XTXDamlrl025o2zqDa96PQ https://www.moxfield.com/decks/TKBuC4K7nEqNix3CUiV0NA https://www.moxfield.com/decks/apdbPxW6CkOp2byfSC9w1Q https://www.moxfield.com/decks/rBKryg5ovUuOIJHs2VPrUg
+
+python .\decklist_difference.py kenrith_2024_apr_aug_top4s.xlsx https://www.moxfield.com/decks/tYOs_w_XKk-3bOLKYYlLSw https://www.moxfield.com/decks/P8CP-8SFy0eA8sYLLsSkiA https://www.moxfield.com/decks/QpKhoCVL0EOOfeY3IL6OgQ https://www.moxfield.com/decks/JSXxEP-PQ0C_6awRVLjTOw https://www.moxfield.com/decks/RIY_Ud4cAEqLJnYdaDtoIg https://www.moxfield.com/decks/2F7Y-Uxox0Gqt3A6hGta3A

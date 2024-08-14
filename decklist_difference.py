@@ -1,12 +1,15 @@
+import os
 import sys
 import xlsxwriter
 from xlsxwriter.utility import xl_rowcol_to_cell
 from fetch_decklist_from_link import fetch_decklist_from_url
 
+OUTPUT_DIRNAME = 'outputs'
 
 def write_to_xlsx(
     deck_dicts,
     deck_names,
+    deck_links,
     cards_in_all_decks,
     cards_in_two_or_more_decks,
     output_filename,
@@ -17,9 +20,14 @@ def write_to_xlsx(
         {"bg_color": "#ffcccc", "font_color": "#cc0000", "bold": True, "border": 1}
     )
 
-    headers = ["Card Name", "Number of Decks", *deck_names]
+    # TODO: Add deck creator name on 2nd line
+    deck_names_with_links = [
+        "\n".join(name_link) for name_link in zip(deck_names, deck_links)
+    ]
+    headers = ["Card Name", "Number of Decks", *deck_names_with_links]
     row = 1
     worksheet.write_row(0, 0, headers)
+    worksheet.set_row(0, 30)
 
     for card in sorted(cards_in_all_decks):
         worksheet.write_row(
@@ -50,6 +58,7 @@ def write_to_xlsx(
     worksheet.write_row(end_row + 1, 0, ["Total Difference", "", *num_outliers])
 
     worksheet.autofit()
+    worksheet.set_column(1, len(headers), 30)
     worksheet.freeze_panes(1, 1)
     b1 = xl_rowcol_to_cell(start_row, 1)
     c1 = xl_rowcol_to_cell(start_row, 2)
@@ -76,7 +85,12 @@ def write_to_xlsx(
     workbook.close()
 
 
-def run(deck_names: list[str], deck_dicts: list[dict[str, int]], output_filename):
+def run(
+    deck_names: list[str],
+    deck_dicts: list[dict[str, int]],
+    deck_links: list[str],
+    output_filename,
+):
     deck_sets: list[set[str]] = [set(dd.keys()) for dd in deck_dicts]
     cards_in_all_decks = deck_sets[0].copy()
     _cards_in_any_deck = deck_sets[0].copy()
@@ -88,6 +102,7 @@ def run(deck_names: list[str], deck_dicts: list[dict[str, int]], output_filename
     write_to_xlsx(
         deck_dicts=deck_dicts,
         deck_names=deck_names,
+        deck_links=deck_links,
         cards_in_all_decks=cards_in_all_decks,
         cards_in_two_or_more_decks=cards_in_two_or_more_decks,
         output_filename=output_filename,
@@ -104,4 +119,12 @@ if __name__ == "__main__":
         deck_dicts.append(dd)
         deck_names.append(dn)
 
-    run(deck_names, deck_dicts, output_filename)
+    if not os.path.exists(OUTPUT_DIRNAME):
+        os.mkdir(OUTPUT_DIRNAME)
+
+    run(
+        deck_names=deck_names,
+        deck_dicts=deck_dicts,
+        deck_links=deck_links,
+        output_filename=f'{OUTPUT_DIRNAME}/{output_filename}',
+    )

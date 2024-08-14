@@ -39,6 +39,9 @@ def _fetch_decklist_from_archidekt(url):
 def _fetch_decklist_from_moxfield(url):
     moxfield_api_base = "https://api2.moxfield.com/v3/decks/all/"
     data = requests.get(moxfield_api_base + url.split("/decks/")[1]).json()
+    if "name" not in data:
+        print(data)
+        raise Exception("Error for url " + url)
     deck_name = data["name"]
     cards = list(data["boards"]["mainboard"]["cards"].values()) + list(
         data["boards"]["commanders"]["cards"].values()
